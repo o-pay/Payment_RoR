@@ -65,3 +65,4 @@ class YOURCONTROLLER < ApplicationController
     htm = create.aio_check_out_credit_period(period_info: period_params, params: base_param, invoice: inv_params)
     render :text => htm
   end
+end

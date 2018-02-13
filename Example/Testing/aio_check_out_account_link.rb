@@ -2,7 +2,7 @@ require 'allpay_payment'
 
 class YOURCONTROLLER < ApplicationController
 
-  def AioChkCVS
+  def AioChkCreditAccountLink
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
     base_param = {
@@ -51,18 +51,9 @@ class YOURCONTROLLER < ApplicationController
 =end      
     }
 
-    cvs_params = {
-      'StoreExpireDate' => '7',
-      'Desc_1' => '超商螢幕描述A',
-      'Desc_2' => '超商螢幕描述B',
-      'Desc_3' => '超商螢幕描述C',
-      'Desc_4' => '超商螢幕描述D',
-      'PaymentInfoURL' => 'http://192.168.0.1'
-    }
-    client_redirect_url = 'http://192.168.0.1/payment_result'
-
     create = AllpayPayment::PaymentClient.new
-    htm = create.aio_check_out_cvs(cvs_info: cvs_params, params: base_param, invoice: inv_params, client_redirect_url: client_redirect_url)
+    htm = create.aio_check_out_account_link(params: base_param, invoice: inv_params)
+
     render :text => htm
   end
 end

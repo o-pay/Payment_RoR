@@ -56,3 +56,4 @@ class YOURCONTROLLER < ApplicationController
 
     render :text => htm
   end
+end

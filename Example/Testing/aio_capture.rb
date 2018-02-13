@@ -15,7 +15,8 @@ class YOURCONTROLLER < ApplicationController
     }
 
 
-    create = AllpayPayment::PaymentClient.new
-    res = query.aio_capture(base_param)
+    exec = AllpayPayment::ExecRefundAndGrant.new
+    res = exec.aio_capture(base_param)
     render :text => res
   end
+end

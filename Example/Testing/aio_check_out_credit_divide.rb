@@ -2,7 +2,7 @@ require 'allpay_payment'
 
 class YOURCONTROLLER < ApplicationController
 
-  def AioTestAll
+  def AioTestDevide
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
     base_param = {
@@ -58,3 +58,4 @@ class YOURCONTROLLER < ApplicationController
     htm = create.aio_check_out_credit_divide(params: base_param, invoice: inv_params, installment: inst, amount:amt)
     render :text => htm
   end
+end
