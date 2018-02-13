@@ -10,7 +10,8 @@ class YOURCONTROLLER < ApplicationController
     }
 
 
-    create = AllpayPayment::PaymentClient.new
+    query = AllpayPayment::QueryClient.new
     res = query.query_credit_period(base_param)
     render :text => res
   end
+end

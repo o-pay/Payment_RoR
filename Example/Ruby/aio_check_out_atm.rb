@@ -59,3 +59,4 @@ class YOURCONTROLLER < ApplicationController
     htm = create.aio_check_out_atm(params: base_param, url_return_payinfo: pay_info_url, exp_period: exp, client_redirect:cli_redir_url, invoice:inv_params)
     render :text => htm
   end
+end

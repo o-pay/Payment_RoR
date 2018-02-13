@@ -13,7 +13,8 @@ class YOURCONTROLLER < ApplicationController
     }
 
 
-    create = AllpayPayment::PaymentClient.new
-    res = query.credit_do_act(base_param)
+    exec = AllpayPayment::ExecRefundAndGrant.new
+    res = exec.credit_do_act(base_param)
     render :text => res
   end
+end

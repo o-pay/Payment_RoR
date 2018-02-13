@@ -2,7 +2,7 @@ require 'allpay_payment'
 
 class YOURCONTROLLER < ApplicationController
 
-  def AioChkCreditOnce
+  def AioChkCreditAll
     ## 參數值為[PLEASE MODIFY]者，請在每次測試時給予獨特值
     ## 若要測試非必帶參數請將base_param內註解的參數依需求取消註解 ##
     base_param = {
@@ -52,7 +52,8 @@ class YOURCONTROLLER < ApplicationController
     }
 
     create = AllpayPayment::PaymentClient.new
-    htm = create.aio_check_out_credit_onetime(params: base_param, invoice: inv_params)
+    htm = create.aio_check_out_all(params: base_param, invoice: inv_params)
 
     render :text => htm
   end
+end

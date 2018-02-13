@@ -10,7 +10,8 @@ class YOURCONTROLLER < ApplicationController
     }
 
 
-    create = AllpayPayment::PaymentClient.new
+    query = AllpayPayment::QueryClient.new
     res = query.query_trade_info(base_param)
     render :text => res
   end
+end
